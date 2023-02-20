@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody player;
     public float moveSpeed;
+    public float jumpForce;
 
     void Update()
     {
@@ -11,6 +12,11 @@ public class PlayerController : MonoBehaviour
         var z = GetAxisVelocity("Vertical");
 
         player.velocity = new Vector3(x, player.velocity.y, z);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            player.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
     }
 
     private float GetAxisVelocity(string axisName)

@@ -295,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 94203513}
   moveSpeed: 5
+  jumpForce: 5
 --- !u!4 &124219500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4a9f4f973d696344da6e1405a5d8b7af, type: 3}
