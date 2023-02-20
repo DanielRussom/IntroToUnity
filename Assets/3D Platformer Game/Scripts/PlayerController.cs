@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
 
         player.velocity = new Vector3(x, player.velocity.y, z);
 
+        if(player.velocity.x != 0 || player.velocity.z != 0)
+        {
+            transform.forward = new Vector3(player.velocity.x, 0, player.velocity.z);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             isGrounded = false;
