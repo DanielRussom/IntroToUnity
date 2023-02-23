@@ -1,10 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
     public Rigidbody rig;
+    
     public float moveSpeed = 3;
     public float jumpImpulse = 5;
+    private bool isGrounded;
     void Update()
     {
         float xSpeed = GetSpeedOnAxis("Horizontal");
@@ -14,11 +17,20 @@ public class PlayerScript : MonoBehaviour
 
         rig.velocity = new Vector3(xSpeed, currentYvelocity, zSpeed);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rig.AddForce(Vector3.up * jumpImpulse, ForceMode.Impulse);
+            isGrounded = false;
         }
     
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.GetContact(0).normal == Vector3.up)
+        {
+            isGrounded = true;
+        }
     }
 
     private float GetSpeedOnAxis(string axis)
