@@ -17,12 +17,19 @@ public class PlayerScript : MonoBehaviour
 
         rig.velocity = new Vector3(xSpeed, currentYvelocity, zSpeed);
 
+        if (xSpeed != 0 || zSpeed != 0)
+        {
+            transform.forward = new Vector3(xSpeed, 0, zSpeed);
+        }
+        
+
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rig.AddForce(Vector3.up * jumpImpulse, ForceMode.Impulse);
             isGrounded = false;
         }
-    
+        
     }
 
     private void OnCollisionEnter(Collision collision)
