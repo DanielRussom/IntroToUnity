@@ -18,15 +18,26 @@ public class Enemy : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        if(transform.position == targetPosition)
+        if (transform.position != targetPosition)
         {
-            if (targetPosition == startPosition)
-            {
-                targetPosition = startPosition + moveOffset;
-            } else {
-                targetPosition = startPosition;
-            }
+            return;
         }
 
+        if (targetPosition == startPosition)
+        {
+            targetPosition = startPosition + moveOffset;
+        }
+        else 
+        {
+            targetPosition = startPosition;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player")) 
+        {
+            other.GetComponent<PlayerScript>().GameOver();
+        }
     }
 }

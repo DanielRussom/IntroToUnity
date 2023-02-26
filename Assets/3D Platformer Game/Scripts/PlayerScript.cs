@@ -1,5 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -43,5 +43,10 @@ public class PlayerScript : MonoBehaviour
     private float GetSpeedOnAxis(string axis)
     {
         return Input.GetAxisRaw(axis) * moveSpeed;
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
