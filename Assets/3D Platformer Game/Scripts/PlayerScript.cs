@@ -10,6 +10,12 @@ public class PlayerScript : MonoBehaviour
     private bool isGrounded;
     void Update()
     {
+        if(rig.position.y < -5)
+        {
+            GameOver();
+            return;
+        }
+
         float xSpeed = GetSpeedOnAxis("Horizontal");
         float zSpeed = GetSpeedOnAxis("Vertical");
 
