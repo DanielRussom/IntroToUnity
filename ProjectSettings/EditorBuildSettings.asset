@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Balloon Popper/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/3D Platformer Game/Scenes/Menu.unity
+    guid: f0fe3d7d4fbd3bf42a8700129f65fb73
+  - enabled: 1
     path: Assets/3D Platformer Game/Scenes/LevelOne.unity
     guid: b6eb11f87bd83c84b9984e9edfc5dccf
   - enabled: 1
