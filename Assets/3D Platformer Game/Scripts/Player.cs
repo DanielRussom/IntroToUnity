@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     public float moveSpeed = 3;
     public float jumpImpulse = 5;
     public int score;
+    public TextMeshProUGUI scoreText;
     private bool isGrounded;
     void Update()
     {
@@ -60,5 +62,6 @@ public class Player : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
+        scoreText.text = score.ToString();
     }
 }
