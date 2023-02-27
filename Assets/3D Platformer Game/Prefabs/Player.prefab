@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: 7784384283249333438}
-  moveSpeed: 3
-  jumpImpulse: 5
+  moveSpeed: 4
+  jumpImpulse: 6
   score: 0
 --- !u!54 &7784384283249333438
 Rigidbody:
