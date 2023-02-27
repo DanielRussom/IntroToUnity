@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
     {
         if(other.CompareTag("Player")) 
         {
-            other.GetComponent<PlayerScript>().GameOver();
+            other.GetComponent<Player>().GameOver();
         }
     }
 }

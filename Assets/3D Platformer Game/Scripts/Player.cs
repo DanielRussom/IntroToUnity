@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerScript : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Rigidbody rig;
     
     public float moveSpeed = 3;
     public float jumpImpulse = 5;
+    public int score;
     private bool isGrounded;
     void Update()
     {
@@ -54,5 +55,10 @@ public class PlayerScript : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void AddScore(int amount)
+    {
+        score += amount;
     }
 }

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class SkiPlayer : MonoBehaviour
 {
     public float moveForce = 5;
 
