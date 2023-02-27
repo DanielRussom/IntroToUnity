@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Balloon Popper/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/3D Platformer Game/Scenes/LevelOne 1.unity
+    guid: b6eb11f87bd83c84b9984e9edfc5dccf
+  - enabled: 1
+    path: Assets/3D Platformer Game/Scenes/LevelTwo.unity
+    guid: d28ea74a66e4b404988cf70d2917910a
   m_configObjects: {}
