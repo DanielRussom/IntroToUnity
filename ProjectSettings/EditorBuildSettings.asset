@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Balloon Popper/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/3D Platformer Game/Scenes/Level2.unity
+    guid: 575549f1945b1894ab5228093f1df222
+  - enabled: 1
+    path: Assets/3D Platformer Game/Scenes/Level1.unity
+    guid: d28ea74a66e4b404988cf70d2917910a
   m_configObjects: {}

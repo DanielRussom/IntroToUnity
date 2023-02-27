@@ -2,6 +2,7 @@ using TreeEditor;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerScript : MonoBehaviour
     public float jumpImpulse = 5;
     private bool isGrounded;
     public int score = 0;
+
+    public TextMeshProUGUI scoreText;
 
     void Update()
     {
@@ -61,5 +64,6 @@ public class PlayerScript : MonoBehaviour
     public void AddScore(int ammount)
     {
         score += ammount;
+        scoreText.text = score.ToString();
     }
 }
