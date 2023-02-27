@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     public float moveSpeed = 3;
     public float jumpImpulse = 5;
     private bool isGrounded;
+    public int score = 0;
+
     void Update()
     {
         float xSpeed = GetSpeedOnAxis("Horizontal");
@@ -54,5 +56,10 @@ public class PlayerScript : MonoBehaviour
     public void GameOver ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void AddScore(int ammount)
+    {
+        score += ammount;
     }
 }
