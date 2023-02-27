@@ -1,5 +1,7 @@
+using TreeEditor;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -30,6 +32,10 @@ public class PlayerScript : MonoBehaviour
             isGrounded = false;
         }
         
+        if (transform.position.y < -5)
+        {
+            GameOver();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -43,5 +49,10 @@ public class PlayerScript : MonoBehaviour
     private float GetSpeedOnAxis(string axis)
     {
         return Input.GetAxisRaw(axis) * moveSpeed;
+    }
+
+    public void GameOver ()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
