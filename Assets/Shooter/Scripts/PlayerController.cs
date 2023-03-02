@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -26,7 +27,14 @@ public class PlayerController : MonoBehaviour
         Move();
 
         CamLook();
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            TryJump();
+        }
     }
+
+
 
     private void Move()
     {
@@ -47,5 +55,15 @@ public class PlayerController : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(-currentXRotation, 0, 0);
 
         transform.eulerAngles += Vector3.up * y;
+    }
+
+    private void TryJump()
+    {
+        var ray = new Ray(transform.position, Vector3.down);
+        if(Physics.Raycast(ray, 1.1f))
+        {
+            body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+
     }
 }
