@@ -40,8 +40,10 @@ public class PlayerController : MonoBehaviour
     {
         var xMovementSpeed = Input.GetAxis("Horizontal") * moveSpeed;
         var zMovementSpeed = Input.GetAxis("Vertical") * moveSpeed;
+        var direction = transform.right * xMovementSpeed + transform.forward * zMovementSpeed;
+        direction.y = body.velocity.y;
 
-        body.velocity = new Vector3(xMovementSpeed, body.velocity.y, zMovementSpeed);
+        body.velocity = direction;
     }
 
     private void CamLook()
