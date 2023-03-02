@@ -645,7 +645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 5
-  lookSensitivity: 5
+  lookSensitivity: 3
   maxLookX: 70
   minLookX: -70
 --- !u!1 &1187957953

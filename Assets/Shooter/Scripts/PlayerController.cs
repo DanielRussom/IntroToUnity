@@ -42,9 +42,10 @@ public class PlayerController : MonoBehaviour
         var x = Input.GetAxis("Mouse Y") * lookSensitivity;
 
         currentXRotation += x;
-
         currentXRotation = Mathf.Clamp(currentXRotation, minLookX, maxLookX);
 
         cam.transform.localRotation = Quaternion.Euler(-currentXRotation, 0, 0);
+
+        transform.eulerAngles += Vector3.up * y;
     }
 }
