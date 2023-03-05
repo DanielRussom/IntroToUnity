@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -22,6 +23,19 @@ public class Weapon : MonoBehaviour
         {
             isPlayer = true;
         }
+    }
+
+    private void Shoot()
+    {
+        if (CanShoot())
+        {
+            // eat pant
+        }
+    }
+
+    private bool CanShoot()
+    {
+        return (currentAmmo > 0 || infiniteAmmo) && Time.time >= shootTime + fireRate;
     }
 
 }
