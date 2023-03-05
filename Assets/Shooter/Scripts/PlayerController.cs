@@ -15,11 +15,13 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody body;
     private Camera cam;
+    private Weapon weapon;
 
     private void Awake()
     {
         cam = Camera.main;
         body = GetComponent<Rigidbody>();
+        weapon = GetComponent<Weapon>();
     }
     
     private void Update()
@@ -31,6 +33,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             TryJump();
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            weapon.Shoot();
         }
     }
 

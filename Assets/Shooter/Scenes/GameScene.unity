@@ -661,6 +661,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc96c477a76454a42b479ee9d7c7b270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  muzzle: {fileID: 0}
+  maxAmmo: 0
+  currentAmmo: 5
+  infiniteAmmo: 0
+  bulletSpeed: 0
+  fireRate: 0
 --- !u!1 &1187957953
 GameObject:
   m_ObjectHideFlags: 0

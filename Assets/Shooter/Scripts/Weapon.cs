@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -25,11 +24,11 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         if (CanShoot())
         {
-            // eat pant
+            Debug.Log("BANG");
         }
     }
 
