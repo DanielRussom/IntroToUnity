@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -231,7 +231,6 @@ GameObject:
   - component: {fileID: 133192677}
   - component: {fileID: 133192680}
   - component: {fileID: 133192679}
-  - component: {fileID: 133192678}
   m_Layer: 0
   m_Name: GunBarrel
   m_TagString: Untagged
@@ -257,19 +256,6 @@ Transform:
   m_Father: {fileID: 1459105423}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &133192678
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133192676}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &133192679
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -331,7 +317,6 @@ GameObject:
   - component: {fileID: 372833321}
   - component: {fileID: 372833324}
   - component: {fileID: 372833323}
-  - component: {fileID: 372833322}
   m_Layer: 0
   m_Name: BackSight2
   m_TagString: Untagged
@@ -354,19 +339,6 @@ Transform:
   m_Father: {fileID: 133192677}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &372833322
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372833320}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &372833323
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -428,7 +400,6 @@ GameObject:
   - component: {fileID: 489826524}
   - component: {fileID: 489826527}
   - component: {fileID: 489826526}
-  - component: {fileID: 489826525}
   m_Layer: 0
   m_Name: BackSight1
   m_TagString: Untagged
@@ -451,19 +422,6 @@ Transform:
   m_Father: {fileID: 133192677}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &489826525
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489826523}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &489826526
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -661,13 +619,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc96c477a76454a42b479ee9d7c7b270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  muzzle: {fileID: 0}
-  maxAmmo: 0
-  currentAmmo: 5
+  bulletPrefab: {fileID: 6865540901120099394, guid: f27c9f68500d98a4e9f20ce99256e299, type: 3}
+  muzzle: {fileID: 2049737097}
+  maxAmmo: 60
+  currentAmmo: 20
   infiniteAmmo: 0
-  bulletSpeed: 0
-  fireRate: 0
+  bulletSpeed: 20
+  fireRate: 0.1
 --- !u!1 &1187957953
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +882,6 @@ GameObject:
   - component: {fileID: 1897036691}
   - component: {fileID: 1897036694}
   - component: {fileID: 1897036693}
-  - component: {fileID: 1897036692}
   m_Layer: 0
   m_Name: FrontSight
   m_TagString: Untagged
@@ -947,19 +904,6 @@ Transform:
   m_Father: {fileID: 133192677}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1897036692
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897036690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1897036693
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1021,7 +965,6 @@ GameObject:
   - component: {fileID: 2002624690}
   - component: {fileID: 2002624693}
   - component: {fileID: 2002624692}
-  - component: {fileID: 2002624691}
   m_Layer: 0
   m_Name: GunHandle
   m_TagString: Untagged
@@ -1044,19 +987,6 @@ Transform:
   m_Father: {fileID: 1459105423}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -59.886, y: 0, z: 0}
---- !u!65 &2002624691
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002624689}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2002624692
 MeshRenderer:
   m_ObjectHideFlags: 0

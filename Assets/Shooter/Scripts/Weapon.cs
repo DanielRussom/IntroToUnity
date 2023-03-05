@@ -15,7 +15,6 @@ public class Weapon : MonoBehaviour
     private float shootTime;
     private bool isPlayer;
 
-
     private void Awake()
     {
         if (GetComponent<PlayerController>())
@@ -25,11 +24,17 @@ public class Weapon : MonoBehaviour
     }
 
     public void Shoot()
-    {
-        if (CanShoot())
+    {   
+
+        if (!CanShoot())
         {
-            Debug.Log("BANG");
+            return;
         }
+        currentAmmo--;
+        shootTime = Time.time;
+
+        var bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
     }
 
     private bool CanShoot()
