@@ -18,7 +18,6 @@ public class ObjectPool : MonoBehaviour
 
     private GameObject CreateNewObject()
     {
-        Debug.Log("Created bullet");
 
         var gameObject = Instantiate(prefab);
         gameObject.SetActive(false);
