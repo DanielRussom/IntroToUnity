@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 726923429}
   - component: {fileID: 726923430}
   - component: {fileID: 726923431}
+  - component: {fileID: 726923432}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -619,13 +620,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc96c477a76454a42b479ee9d7c7b270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6865540901120099394, guid: f27c9f68500d98a4e9f20ce99256e299, type: 3}
+  bulletPool: {fileID: 726923432}
   muzzle: {fileID: 2049737097}
   maxAmmo: 60
   currentAmmo: 20
   infiniteAmmo: 0
   bulletSpeed: 20
   fireRate: 0.1
+--- !u!114 &726923432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726923424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bbb80c832a83514bb2e8c80f9d1d3a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6865540901120099394, guid: f27c9f68500d98a4e9f20ce99256e299, type: 3}
+  createOnStart: 5
 --- !u!1 &1187957953
 GameObject:
   m_ObjectHideFlags: 0
