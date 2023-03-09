@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public ObjectPool bulletPool;
 
     public Transform muzzle;
 
@@ -25,7 +25,6 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {   
-
         if (!CanShoot())
         {
             return;
@@ -33,7 +32,10 @@ public class Weapon : MonoBehaviour
         currentAmmo--;
         shootTime = Time.time;
 
-        var bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+        var bullet = bulletPool.GetObject();
+        bullet.transform.position = muzzle.position;
+        bullet.transform.rotation = muzzle.rotation;
+
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
     }
 
