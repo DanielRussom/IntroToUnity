@@ -25,10 +25,6 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {   
-        if (!CanShoot())
-        {
-            return;
-        }
         currentAmmo--;
         shootTime = Time.time;
 
@@ -39,7 +35,7 @@ public class Weapon : MonoBehaviour
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
     }
 
-    private bool CanShoot()
+    public bool CanShoot()
     {
         return (currentAmmo > 0 || infiniteAmmo) && Time.time >= shootTime + fireRate;
     }

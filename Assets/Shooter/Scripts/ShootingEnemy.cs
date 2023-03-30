@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -35,5 +36,34 @@ public class ShootingEnemy : MonoBehaviour
         path = navMesh.corners.ToList();
     }
 
+    private void Update()
+    {
+        var distance = Vector3.Distance(transform.position, target.transform.position);
 
+        if (distance > attackRange)
+        {
+            ChaseTarget();
+            return;
+        }
+
+        if(weapon.CanShoot())
+        {
+            weapon.Shoot();
+        } 
+    }
+
+    private void ChaseTarget()
+    {
+        if(path.Count == 0)
+        {
+            return;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, path[0] + new Vector3(0, yPathOffset, 0), moveSpeed * Time.deltaTime);
+
+        if(transform.position == path[0] + new Vector3(0, yPathOffset, 0))
+        {
+            path.RemoveAt(0);
+        }
+    }
 }

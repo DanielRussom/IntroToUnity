@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
             TryJump();
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && weapon.CanShoot())
         {
             weapon.Shoot();
         }
