@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -22,8 +21,12 @@ public class ShootingEnemy : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("AAA1");
         weapon = GetComponent<Weapon>();
-        target = FindObjectOfType<Player>().gameObject;
+        Debug.Log("AAA2");
+        target = FindObjectOfType<PlayerController>().gameObject;
+        Debug.Log("AAA3");
+        Debug.Log(target);
 
         InvokeRepeating("UpdatePath", 0.0f, 0.5f);
     }
