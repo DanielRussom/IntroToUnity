@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -21,12 +22,8 @@ public class ShootingEnemy : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("AAA1");
         weapon = GetComponent<Weapon>();
-        Debug.Log("AAA2");
         target = FindObjectOfType<PlayerController>().gameObject;
-        Debug.Log("AAA3");
-        Debug.Log(target);
 
         InvokeRepeating("UpdatePath", 0.0f, 0.5f);
     }
@@ -52,7 +49,13 @@ public class ShootingEnemy : MonoBehaviour
         if(weapon.CanShoot())
         {
             weapon.Shoot();
-        } 
+        }
+
+        var directionToPlayer = (target.transform.position - transform.position).normalized;
+
+        var angleToPlayer = Mathf.Atan2(directionToPlayer.x, directionToPlayer.z) * Mathf.Rad2Deg;
+
+        transform.eulerAngles = angleToPlayer * Vector3.up;
     }
 
     private void ChaseTarget()
