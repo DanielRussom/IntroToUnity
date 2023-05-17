@@ -1,6 +1,6 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -24,6 +24,7 @@ public class ShootingEnemy : MonoBehaviour
     {
         weapon = GetComponent<Weapon>();
         target = FindObjectOfType<PlayerController>().gameObject;
+        currentHP = maxHP;
 
         InvokeRepeating("UpdatePath", 0.0f, 0.5f);
     }
@@ -71,5 +72,19 @@ public class ShootingEnemy : MonoBehaviour
         {
             path.RemoveAt(0);
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHP -= damage;
+        if(currentHP <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

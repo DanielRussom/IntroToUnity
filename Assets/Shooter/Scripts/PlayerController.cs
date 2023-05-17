@@ -1,7 +1,12 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("stats")]
+    public int currentHP;
+    public int maxHP;
+
     [Header("Movement")]
     public float moveSpeed;
     public float jumpForce;
@@ -74,5 +79,33 @@ public class PlayerController : MonoBehaviour
             body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHP -= damage;
+        if (currentHP <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        
+    }
+
+    internal void GiveHealth(int value)
+    {
+        currentHP += value;
+        if (currentHP > maxHP)
+        {
+            currentHP = maxHP;
+        }
+    }
+
+    internal void GiveAmmo(int value)
+    {
+        weapon.currentAmmo = Mathf.Clamp(weapon.currentAmmo+value, 0, weapon.maxAmmo);
     }
 }

@@ -6,7 +6,7 @@ public class ObjectPool : MonoBehaviour
     public GameObject prefab;
     public int createOnStart;
 
-    private List<GameObject> objects = new();
+    private List<GameObject> pool = new();
 
     private void Start()
     {
@@ -18,18 +18,17 @@ public class ObjectPool : MonoBehaviour
 
     private GameObject CreateNewObject()
     {
-
         var gameObject = Instantiate(prefab);
         gameObject.SetActive(false);
 
-        objects.Add(gameObject);
+        pool.Add(gameObject);
 
         return gameObject;
     }
 
     public GameObject GetObject()
     {
-        var objectToTake = objects.Find(x => x.activeInHierarchy == false);
+        var objectToTake = pool.Find(x => x.activeInHierarchy == false);
 
         if(objectToTake == null)
         {
