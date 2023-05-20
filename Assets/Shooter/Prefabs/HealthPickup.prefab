@@ -145,6 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 25
   type: 0
+  rotateSpeed: 200
+  floatSpeed: 0.5
+  floatHeight: 0.25
 --- !u!1 &7805994908145099141
 GameObject:
   m_ObjectHideFlags: 0

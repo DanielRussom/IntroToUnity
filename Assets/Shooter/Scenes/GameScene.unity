@@ -1030,8 +1030,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939985231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.97, y: 1.05, z: 16.97}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 0.76, y: 1.05, z: 16.97}
+  m_LocalScale: {x: 11.48, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1044,6 +1044,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4853961334395033352, guid: 073fd38cd18acf846b84fbe115f42de8, type: 3}
+      propertyPath: floatSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4853961334395033352, guid: 073fd38cd18acf846b84fbe115f42de8, type: 3}
+      propertyPath: floatHeight
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -4853961334395033352, guid: 073fd38cd18acf846b84fbe115f42de8, type: 3}
+      propertyPath: rotateSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6764557837660418433, guid: 073fd38cd18acf846b84fbe115f42de8, type: 3}
       propertyPath: m_Name
       value: HealthPickup
@@ -1058,7 +1070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7763027474375738258, guid: 073fd38cd18acf846b84fbe115f42de8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.66
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 7763027474375738258, guid: 073fd38cd18acf846b84fbe115f42de8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1846,7 +1858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732463003}
   m_LocalRotation: {x: -0, y: 0.99981374, z: -0, w: -0.019304091}
-  m_LocalPosition: {x: 0.009109032, y: 1, z: 9.711816}
+  m_LocalPosition: {x: 0.44, y: 1, z: 20.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
