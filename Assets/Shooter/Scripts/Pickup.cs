@@ -32,7 +32,7 @@ public class Pickup : MonoBehaviour
 
         if(transform.position == startPosition + offset)
         {
-            offset *= -1;
+            offset = -offset;
         }
     }
 
@@ -54,6 +54,4 @@ public class Pickup : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }
