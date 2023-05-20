@@ -24,8 +24,8 @@ public class Pickup : MonoBehaviour
                     player.GiveAmmo(value);
                     break;
             }
-             
 
+            Destroy(gameObject);
         }
     }
 }
