@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -5,6 +6,7 @@ public class Bullet : MonoBehaviour
     public int damage;
     public float lifetime;
     private float shootTime;
+    public GameObject particleEfffect;
 
     private void OnEnable()
     {
@@ -22,6 +24,9 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        var obj = Instantiate(particleEfffect, transform.position, Quaternion.identity);
+        Destroy(obj, 0.5f);
+        Debug.Log("start");
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerController>().TakeDamage(damage);
@@ -31,6 +36,7 @@ public class Bullet : MonoBehaviour
             other.GetComponent<ShootingEnemy>().TakeDamage(damage);
         }
         gameObject.SetActive(false);
+        Debug.Log("end");
     }
 
 
