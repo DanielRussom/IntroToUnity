@@ -26,7 +26,6 @@ public class Bullet : MonoBehaviour
     {
         var obj = Instantiate(particleEfffect, transform.position, Quaternion.identity);
         Destroy(obj, 0.5f);
-        Debug.Log("start");
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerController>().TakeDamage(damage);
@@ -36,7 +35,6 @@ public class Bullet : MonoBehaviour
             other.GetComponent<ShootingEnemy>().TakeDamage(damage);
         }
         gameObject.SetActive(false);
-        Debug.Log("end");
     }
 
 
