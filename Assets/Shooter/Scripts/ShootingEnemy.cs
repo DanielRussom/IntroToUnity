@@ -9,7 +9,7 @@ public class ShootingEnemy : MonoBehaviour
     [Header("stats")]
     public int currentHP;
     public int maxHP;
-    public int scoreToGive;
+    public int killScore;
 
     [Header("movement")]
     public float moveSpeed;
@@ -86,5 +86,6 @@ public class ShootingEnemy : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        GameManager.instance.AddScore(killScore);
     }
 }

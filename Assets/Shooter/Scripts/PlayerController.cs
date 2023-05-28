@@ -46,8 +46,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
     private void Move()
     {
         var xMovementSpeed = Input.GetAxis("Horizontal") * moveSpeed;
@@ -88,11 +86,11 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+        GameUI.instance.UpdateHealthBar(currentHP, maxHP);
     }
 
     private void Die()
     {
-        
     }
 
     internal void GiveHealth(int value)
@@ -102,10 +100,12 @@ public class PlayerController : MonoBehaviour
         {
             currentHP = maxHP;
         }
+        GameUI.instance.UpdateHealthBar(currentHP, maxHP);
     }
 
     internal void GiveAmmo(int value)
     {
         weapon.currentAmmo = Mathf.Clamp(weapon.currentAmmo+value, 0, weapon.maxAmmo);
+        GameUI.instance.UpdateAmmoText(weapon.currentAmmo, weapon.maxAmmo);
     }
 }

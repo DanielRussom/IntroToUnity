@@ -20,6 +20,7 @@ public class GameUI : MonoBehaviour
 
     public static GameUI instance;
 
+
     private void Awake()
     {
         instance = this;    
@@ -57,6 +58,7 @@ public class GameUI : MonoBehaviour
 
     public void OnResumeButtonClick()
     {
+        GameManager.instance.TogglePauseGame();
     }
 
     public void OnRestartButtonClick()

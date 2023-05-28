@@ -33,11 +33,15 @@ public class Weapon : MonoBehaviour
         bullet.transform.rotation = muzzle.rotation;
 
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
+
+        if (isPlayer)
+        {
+            GameUI.instance.UpdateAmmoText(currentAmmo, maxAmmo);
+        }
     }
 
     public bool CanShoot()
     {
         return (currentAmmo > 0 || infiniteAmmo) && Time.time >= shootTime + fireRate;
     }
-
 }
