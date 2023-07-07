@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcd782309398474ea7ffc11d05c6a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 10
+  currentHP: 20
   maxHP: 20
   moveSpeed: 5
   jumpForce: 5
@@ -2116,7 +2116,7 @@ MonoBehaviour:
   muzzle: {fileID: 2049737097}
   maxAmmo: 60
   currentAmmo: 20
-  infiniteAmmo: 0
+  infiniteAmmo: 1
   bulletSpeed: 20
   fireRate: 0.1
 --- !u!114 &726923432
@@ -2912,13 +2912,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cade927706d8ac4c80694e4347f4490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  ammoText: {fileID: 0}
-  healthBarFill: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  endgameScreenObject: {fileID: 0}
-  endgameHeaderText: {fileID: 0}
-  endgameScoreText: {fileID: 0}
+  scoreText: {fileID: 114929949}
+  ammoText: {fileID: 1725423955}
+  healthBarFill: {fileID: 1933815131}
+  pauseMenu: {fileID: 208021077}
+  endgameScreenObject: {fileID: 1153438566}
+  endgameHeaderText: {fileID: 415370089}
+  endgameScoreText: {fileID: 411550534}
 --- !u!114 &1110228132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2931,7 +2931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48f4363711f474448a4e21d53c613ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreToWin: 0
+  scoreToWin: 1
   currentScore: 0
   isGamePaused: 0
 --- !u!1 &1153438566
@@ -4124,7 +4124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHP: 10
   maxHP: 10
-  scoreToGive: 1
+  killScore: 0
   moveSpeed: 5
   attackRange: 5
   yPathOffset: 1

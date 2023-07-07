@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = isGamePaused ? 0 : 1;
 
         GameUI.instance.TogglePauseMenu(isGamePaused);
+
+        Cursor.lockState = isGamePaused ? CursorLockMode.None : CursorLockMode.Locked;
     }
 
     public void AddScore(int score)
@@ -42,7 +44,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void WinGame()
+    public void WinGame()
+    {
+        GameUI.instance.SetEndgameScreen(true, currentScore);
+    }
+
+    public void LoseGame()
     {
         GameUI.instance.SetEndgameScreen(true, currentScore);
     }

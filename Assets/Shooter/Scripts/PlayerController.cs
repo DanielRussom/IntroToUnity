@@ -1,4 +1,5 @@
 using System;
+using System.Transactions;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -21,6 +22,12 @@ public class PlayerController : MonoBehaviour
     private Camera cam;
     private Weapon weapon;
 
+    private void Start()
+    {
+        GameUI.instance.UpdateHealthBar(currentHP, maxHP);
+        GameUI.instance.UpdateScoreText(0);
+        GameUI.instance.UpdateAmmoText(weapon.currentAmmo, weapon.maxAmmo);
+    }
     private void Awake()
     {
         cam = Camera.main;
@@ -31,6 +38,11 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
+        if (GameManager.instance.isGamePaused) 
+        {
+            return;
+        }
+
         Move();
 
         CamLook();
@@ -91,6 +103,7 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
+        GameManager.instance.LoseGame();
     }
 
     internal void GiveHealth(int value)
