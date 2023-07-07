@@ -24,8 +24,11 @@ public class Weapon : MonoBehaviour
     }
 
     public void Shoot()
-    {   
-        currentAmmo--;
+    {
+        if (!infiniteAmmo)
+        {
+            currentAmmo--;
+        }
         shootTime = Time.time;
 
         var bullet = bulletPool.GetObject();
