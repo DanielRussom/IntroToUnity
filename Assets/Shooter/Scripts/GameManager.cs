@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     private void Awake()
     {
         instance = this;
@@ -52,5 +57,7 @@ public class GameManager : MonoBehaviour
     public void LoseGame()
     {
         GameUI.instance.SetEndgameScreen(true, currentScore);
+        Time.timeScale = 0;
+        isGamePaused = true;
     }
 }
