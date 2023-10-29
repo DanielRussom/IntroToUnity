@@ -1,17 +1,19 @@
+using System;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     public ObjectPool bulletPool;
-
     public Transform muzzle;
+    public AudioClip shootSound;
 
     public int maxAmmo;
     public int currentAmmo;
     public bool infiniteAmmo;
     public float bulletSpeed;
     public float fireRate;
-    
+
+    private AudioSource audioSource;
     private float shootTime;
     private bool isPlayer;
 
@@ -21,6 +23,8 @@ public class Weapon : MonoBehaviour
         {
             isPlayer = true;
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Shoot()
@@ -30,6 +34,9 @@ public class Weapon : MonoBehaviour
             currentAmmo--;
         }
         shootTime = Time.time;
+
+        Console.WriteLine(audioSource.ToString());
+        audioSource.PlayOneShot(shootSound);
 
         var bullet = bulletPool.GetObject();
         bullet.transform.position = muzzle.position;

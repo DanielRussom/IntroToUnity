@@ -15,6 +15,8 @@ public class Pickup : MonoBehaviour
     public float floatSpeed;
     public float floatHeight;
 
+    public AudioClip pickupSound;
+
     private Vector3 startPosition;
     private Vector3 offset;
 
@@ -51,6 +53,8 @@ public class Pickup : MonoBehaviour
                     break;
             }
 
+            other.GetComponent<AudioSource>().PlayOneShot(pickupSound);
+            
             Destroy(gameObject);
         }
     }
