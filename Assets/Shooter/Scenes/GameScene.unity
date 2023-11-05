@@ -2341,7 +2341,7 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: ebb61926edf1bd946ad203fa8767e3b8, type: 3}
   maxAmmo: 60
   currentAmmo: 20
-  infiniteAmmo: 0
+  infiniteAmmo: 1
   bulletSpeed: 20
   fireRate: 0.1
 --- !u!114 &726923432

@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         currentScore += score;
 
         GameUI.instance.UpdateScoreText(score);
-
+        
         if(currentScore >= scoreToWin)
         {
             WinGame();

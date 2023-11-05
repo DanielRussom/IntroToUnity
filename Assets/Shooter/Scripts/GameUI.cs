@@ -63,11 +63,11 @@ public class GameUI : MonoBehaviour
 
     public void OnRestartButtonClick()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void OnMenuButtonClick()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MenuScene");
     }
 }
